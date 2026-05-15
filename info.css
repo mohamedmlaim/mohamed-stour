@@ -1,0 +1,322 @@
+/* info.css */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg:        #080c14;
+    --surface:   #0f1623;
+    --border:    rgba(255,255,255,0.06);
+    --accent:    #4f7dff;
+    --accent2:   #00e5a0;
+    --text:      #e8edf5;
+    --muted:     #5a6580;
+    --error:     #ff6b6b;
+    --success-bg:    rgba(0,229,160,0.08);
+    --success-bdr:   rgba(0,229,160,0.25);
+    --success-text:  #00e5a0;
+    --radius:    14px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    background-image:
+        radial-gradient(ellipse 80% 60% at 20% 10%,  rgba(79,125,255,0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 90%,  rgba(0,229,160,0.07) 0%, transparent 55%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.012'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    min-height: 100vh;
+    padding: 40px 16px;
+}
+
+/* Brand at top */
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.03em;
+}
+
+.brand-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    box-shadow: 0 0 14px rgba(79,125,255,0.6);
+    animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%       { transform: scale(1.35); opacity: 0.7; }
+}
+
+form {
+    max-width: 480px;
+    margin: 0 auto;
+    animation: slideUp 0.45s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+fieldset {
+    padding: 36px 32px;
+    border-radius: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow:
+        0 32px 80px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(79,125,255,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+fieldset::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+    opacity: 0.6;
+}
+
+legend {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+    letter-spacing: -0.04em;
+}
+
+.legend-sub {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-bottom: 28px;
+}
+
+/* Two-column grid for name fields */
+.row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: #8899bb;
+    font-size: 0.79rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.input-wrap { position: relative; }
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px 14px 12px 42px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.03);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    appearance: none;
+}
+
+/* fields without icon get no left padding */
+input[type="text"].no-icon,
+input[type="number"].no-icon,
+input[type="password"].no-icon,
+select.no-icon {
+    padding-left: 14px;
+}
+
+input::placeholder { color: var(--muted); font-weight: 400; }
+
+select {
+    padding-left: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a6580' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+}
+
+select option { background: #0f1623; color: var(--text); }
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(79,125,255,0.18);
+    background: rgba(79,125,255,0.04);
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.input-wrap:focus-within .input-icon { color: var(--accent); }
+
+/* Error */
+.error-message {
+    margin-top: 6px;
+    color: var(--error);
+    font-size: 0.84rem;
+    font-weight: 500;
+}
+
+.error-message::before { content: '⚠ '; }
+
+/* Success */
+.success-message {
+    margin-bottom: 20px;
+    padding: 13px 16px;
+    background: var(--success-bg);
+    border: 1px solid var(--success-bdr);
+    border-radius: var(--radius);
+    color: var(--success-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Section label (divider) */
+.section-label {
+    font-size: 0.73rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 24px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-label::before,
+.section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* Gender radio */
+.radio-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.radio-option {
+    flex: 1;
+    min-width: 100px;
+}
+
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+.radio-option label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 16px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.radio-option input[type="radio"]:checked + label {
+    border-color: var(--accent);
+    background: rgba(79,125,255,0.12);
+    color: var(--text);
+    box-shadow: 0 0 0 2px rgba(79,125,255,0.2);
+}
+
+.radio-option label:hover {
+    border-color: rgba(79,125,255,0.4);
+    color: var(--text);
+}
+
+/* Submit */
+input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--accent) 0%, #3a63e8 100%);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 6px 20px rgba(79,125,255,0.4);
+    margin-top: 8px;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(79,125,255,0.45);
+}
+
+input[type="submit"]:active { transform: translateY(0); box-shadow: none; }
+
+.center {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+a { color: var(--accent); text-decoration: none; font-weight: 600; }
+a:hover { opacity: 0.8; text-decoration: underline; }
+
+@media (max-width: 520px) {
+    fieldset { padding: 28px 18px; }
+    .row-2 { grid-template-columns: 1fr; gap: 0; }
+    legend { font-size: 1.45rem; }
+}

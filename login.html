@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Mohamed Stour</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js" defer></script>
+</head>
+<body>
+    <div class="form-container">
+        <div class="brand">
+            <span class="brand-dot"></span>
+            Mohamed Stour
+        </div>
+
+        <form novalidate>
+            <fieldset>
+                <legend>Welcome back</legend>
+                <p class="legend-sub">Sign in to your account to continue</p>
+
+                <div class="form-group">
+                    <label for="txt">Email address</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">✉</span>
+                        <input id="txt" name="email" type="email"
+                               autocomplete="email"
+                               placeholder="you@example.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pas">Password</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">🔒</span>
+                        <input id="pas" name="password" type="password"
+                               autocomplete="current-password"
+                               placeholder="Enter your password" required>
+                    </div>
+                    <div id="login-error" class="error-message" style="display:none;"></div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Sign In →">
+                </div>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <span>or</span>
+                    <div class="divider-line"></div>
+                </div>
+
+                <div class="form-group center">
+                    <p>Don't have an account? <a href="info.html">Create one free</a></p>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

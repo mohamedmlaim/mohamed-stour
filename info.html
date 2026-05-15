@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="info.css">
+    <script src="info.js" defer></script>
+    <title>Create Account — Mohamed Stour</title>
+</head>
+<body>
+    <div class="brand">
+        <span class="brand-dot"></span>
+        Mohamed Stour
+    </div>
+
+    <form novalidate>
+        <fieldset>
+            <legend>Create Account</legend>
+            <p class="legend-sub">Join us — it only takes a minute</p>
+
+            <div class="section-label">Personal Info</div>
+
+            <div class="row-2">
+                <div class="form-group">
+                    <label for="txt">First name</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">👤</span>
+                        <input id="txt" name="firstName" type="text" placeholder="Mohamed" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="la">Last name</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">👤</span>
+                        <input id="la" name="lastName" type="text" placeholder="Stour" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="em">Email</label>
+                <div class="input-wrap">
+                    <span class="input-icon">✉</span>
+                    <input id="em" name="email" type="email" placeholder="you@example.com" required>
+                </div>
+            </div>
+
+            <div class="row-2">
+                <div class="form-group">
+                    <label for="ag">Age</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">🎂</span>
+                        <input id="ag" name="age" type="number" placeholder="18" required min="18" max="100">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="num">Phone</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">📞</span>
+                        <input id="num" name="phone" type="text" placeholder="05XXXXXXXX" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="gender-m" name="gender" value="Male" required>
+                        <label for="gender-m">♂ Male</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="gender-f" name="gender" value="Female" required>
+                        <label for="gender-f">♀ Female</label>
+                    </div>
+                </div>
+                <div id="gender-error"></div>
+            </div>
+
+            <div class="section-label">Delivery Info</div>
+
+            <div class="form-group">
+                <label for="add">Address</label>
+                <div class="input-wrap">
+                    <span class="input-icon">🏠</span>
+                    <input id="add" name="address" type="text" placeholder="Street, city, district" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="w">Province (Wilaya)</label>
+                <select name="wilaya" id="w" class="no-icon" required>
+                    <option value="">Select Province</option>
+                    <option value="Adrar">01 - Adrar</option>
+                    <option value="Chlef">02 - Chlef</option>
+                    <option value="Laghouat">03 - Laghouat</option>
+                    <option value="Oum El Bouaghi">04 - Oum El Bouaghi</option>
+                    <option value="Batna">05 - Batna</option>
+                    <option value="Bejaia">06 - Bejaia</option>
+                    <option value="Biskra">07 - Biskra</option>
+                    <option value="Bechar">08 - Bechar</option>
+                    <option value="Blida">09 - Blida</option>
+                    <option value="Bouira">10 - Bouira</option>
+                    <option value="Tamanrasset">11 - Tamanrasset</option>
+                    <option value="Tebessa">12 - Tebessa</option>
+                    <option value="Tlemcen">13 - Tlemcen</option>
+                    <option value="Tiaret">14 - Tiaret</option>
+                    <option value="Tizi Ouzou">15 - Tizi Ouzou</option>
+                    <option value="Algiers">16 - Algiers</option>
+                    <option value="Djelfa">17 - Djelfa</option>
+                    <option value="Jijel">18 - Jijel</option>
+                    <option value="Setif">19 - Sétif</option>
+                    <option value="Saida">20 - Saïda</option>
+                    <option value="Skikda">21 - Skikda</option>
+                    <option value="Sidi Bel Abbes">22 - Sidi Bel Abbès</option>
+                    <option value="Annaba">23 - Annaba</option>
+                    <option value="Guelma">24 - Guelma</option>
+                    <option value="Constantine">25 - Constantine</option>
+                    <option value="Medea">26 - Médéa</option>
+                    <option value="Mostaganem">27 - Mostaganem</option>
+                    <option value="MSila">28 - M'Sila</option>
+                    <option value="Mascara">29 - Mascara</option>
+                    <option value="Ouargla">30 - Ouargla</option>
+                    <option value="Oran">31 - Oran</option>
+                    <option value="El Bayadh">32 - El Bayadh</option>
+                    <option value="Illizi">33 - Illizi</option>
+                    <option value="Bordj Bou Arreridj">34 - Bordj Bou Arréridj</option>
+                    <option value="Boumerdes">35 - Boumerdès</option>
+                    <option value="El Tarf">36 - El Tarf</option>
+                    <option value="Tindouf">37 - Tindouf</option>
+                    <option value="Tissemsilt">38 - Tissemsilt</option>
+                    <option value="El Oued">39 - El Oued</option>
+                    <option value="Khenchela">40 - Khenchela</option>
+                    <option value="Souk Ahras">41 - Souk Ahras</option>
+                    <option value="Tipaza">42 - Tipaza</option>
+                    <option value="Mila">43 - Mila</option>
+                    <option value="Ain Defla">44 - Aïn Defla</option>
+                    <option value="Naama">45 - Naâma</option>
+                    <option value="Ain Temouchent">46 - Aïn Témouchent</option>
+                    <option value="Ghardaia">47 - Ghardaïa</option>
+                    <option value="Relizane">48 - Relizane</option>
+                    <option value="Timimoun">49 - Timimoun</option>
+                    <option value="Bordj Badji Mokhtar">50 - Bordj Badji Mokhtar</option>
+                    <option value="Ouled Djellal">51 - Ouled Djellal</option>
+                    <option value="Beni Abbes">52 - Béni Abbès</option>
+                    <option value="In Salah">53 - In Salah</option>
+                    <option value="In Guezzam">54 - In Guezzam</option>
+                    <option value="Touggourt">55 - Touggourt</option>
+                    <option value="Djanet">56 - Djanet</option>
+                    <option value="El Mghair">57 - El M'Ghair</option>
+                    <option value="El Meniaa">58 - El Méniaâ</option>
+                </select>
+            </div>
+
+            <div class="section-label">Security</div>
+
+            <div class="form-group">
+                <label for="pass">Password</label>
+                <div class="input-wrap">
+                    <span class="input-icon">🔒</span>
+                    <input id="pass" name="password" type="password" placeholder="Min. 6 characters" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="con">Confirm password</label>
+                <div class="input-wrap">
+                    <span class="input-icon">🔒</span>
+                    <input id="con" name="confirmPassword" type="password" placeholder="Repeat password" required>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top:24px;">
+                <input type="submit" value="Create Account →">
+            </div>
+
+            <div class="form-group center">
+                Already have an account? <a href="login.html">Sign in</a>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

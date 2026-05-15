@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="process.css">
+    <script src="process.js" defer></script>
+    <title>Shop — Mohamed Stour</title>
+</head>
+<body>
+
+    <header class="store-header">
+        <div class="store-name">
+            <span class="brand-dot"></span>
+            Mohamed Stour
+        </div>
+        <div class="header-right">
+            <a href="login.html" class="login-btn" id="login-link">Sign In</a>
+            <!-- Logout button — hidden until logged in, shown by process.js -->
+            <button class="logout-btn" id="logout-btn" style="display:none;" onclick="logout()">Sign out</button>
+        </div>
+    </header>
+
+    <main class="gallery">
+
+        <!-- Last-viewed banner injected here by process.js -->
+
+        <section class="category">
+            <h2 class="category-title">📱 Phones</h2>
+            <div class="product-grid">
+
+                <a href="produit/command_produit1.html" class="product-card" data-name="iPhone">
+                    <img src="IMAGES/Unknown.jpeg" alt="iPhone" loading="lazy">
+                    <div class="product-info">
+                        <h3>iPhone</h3>
+                        <div class="prices">
+                            <span class="price">150,000 DA</span>
+                            <del>200,000 DA</del>
+                            <span class="badge-discount">-25%</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit2.html" class="product-card" data-name="Google Pixel">
+                    <img src="IMAGES/google_pixel.jpeg" alt="Google Pixel" loading="lazy">
+                    <div class="product-info">
+                        <h3>Google Pixel</h3>
+                        <div class="prices">
+                            <span class="price">140,000 DA</span>
+                            <del>160,000 DA</del>
+                            <span class="badge-discount">-13%</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit3.html" class="product-card" data-name="Samsung Phone">
+                    <img src="IMAGES/samsung.jpeg" alt="Samsung phone" loading="lazy">
+                    <div class="product-info">
+                        <h3>Samsung</h3>
+                        <div class="prices">
+                            <span class="price">130,000 DA</span>
+                            <del>180,000 DA</del>
+                            <span class="badge-discount">-28%</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit4.html" class="product-card" data-name="Huawei Phone">
+                    <img src="IMAGES/HUAWEI.jpeg" alt="Huawei phone" loading="lazy">
+                    <div class="product-info">
+                        <h3>Huawei</h3>
+                        <div class="prices">
+                            <span class="price">120,000 DA</span>
+                            <del>150,000 DA</del>
+                            <span class="badge-discount">-20%</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit5.html" class="product-card" data-name="OnePlus">
+                    <img src="IMAGES/oneplus.jpeg" alt="OnePlus phone" loading="lazy">
+                    <div class="product-info">
+                        <h3>OnePlus</h3>
+                        <div class="prices">
+                            <span class="price">110,000 DA</span>
+                            <del>140,000 DA</del>
+                            <span class="badge-discount">-21%</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="category">
+            <h2 class="category-title">💻 PCs</h2>
+            <div class="product-grid">
+
+                <a href="produit/command_produit6.html" class="product-card" data-name="MacBook">
+                    <img src="IMAGES/laptop_macbook.jpeg" alt="MacBook laptop" loading="lazy">
+                    <div class="product-info">
+                        <h3>MacBook</h3>
+                        <div class="prices"><span class="price">200,000 DA</span></div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit7.html" class="product-card" data-name="HP Laptop">
+                    <img src="IMAGES/laptop_hp.jpeg" alt="HP laptop" loading="lazy">
+                    <div class="product-info">
+                        <h3>HP Laptop</h3>
+                        <div class="prices"><span class="price">90,000 DA</span></div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit8.html" class="product-card" data-name="ROG Laptop">
+                    <img src="IMAGES/laptop_ROG.jpeg" alt="ROG laptop" loading="lazy">
+                    <div class="product-info">
+                        <h3>ROG Gaming</h3>
+                        <div class="prices"><span class="price">220,000 DA</span></div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit9.html" class="product-card" data-name="Samsung Laptop">
+                    <img src="IMAGES/laptop_samsung.jpeg" alt="Samsung laptop" loading="lazy">
+                    <div class="product-info">
+                        <h3>Samsung Laptop</h3>
+                        <div class="prices"><span class="price">115,000 DA</span></div>
+                    </div>
+                </a>
+
+                <!-- FIXED: was command_produit10.html (duplicate), now command_produit10b.html -->
+                <a href="produit/command_produit10b.html" class="product-card" data-name="Touchscreen Laptop">
+                    <img src="IMAGES/laptop_tactile.jpeg" alt="Touchscreen laptop" loading="lazy">
+                    <div class="product-info">
+                        <h3>Touchscreen</h3>
+                        <div class="prices"><span class="price">130,000 DA</span></div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="category">
+            <h2 class="category-title">📟 Tablets</h2>
+            <div class="product-grid">
+
+                <a href="produit/command_produit11.html" class="product-card" data-name="Xiaomi Tablet">
+                    <img src="IMAGES/table_xiaomi.jpeg" alt="Xiaomi tablet" loading="lazy">
+                    <div class="product-info">
+                        <h3>Xiaomi Pad</h3>
+                        <div class="prices"><span class="price">70,000 DA</span></div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit12.html" class="product-card" data-name="Huawei Tablet">
+                    <img src="IMAGES/tablet_huawei.jpeg" alt="Huawei tablet" loading="lazy">
+                    <div class="product-info">
+                        <h3>Huawei Tablet</h3>
+                        <div class="prices"><span class="price">80,000 DA</span></div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit13.html" class="product-card" data-name="iPad">
+                    <img src="IMAGES/ipad.jpeg" alt="iPad" loading="lazy">
+                    <div class="product-info">
+                        <h3>iPad</h3>
+                        <div class="prices"><span class="price">130,000 DA</span></div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit14.html" class="product-card" data-name="Realme Tablet">
+                    <img src="IMAGES/tablet_realme.jpeg" alt="Realme tablet" loading="lazy">
+                    <div class="product-info">
+                        <h3>Realme Pad</h3>
+                        <div class="prices"><span class="price">55,000 DA</span></div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit15.html" class="product-card" data-name="Samsung Tablet">
+                    <img src="IMAGES/tablet_samsung.jpeg" alt="Samsung tablet" loading="lazy">
+                    <div class="product-info">
+                        <h3>Samsung Tab</h3>
+                        <div class="prices"><span class="price">95,000 DA</span></div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="category">
+            <h2 class="category-title">⌚ Watches</h2>
+            <div class="product-grid">
+
+                <a href="produit/command_produit16.html" class="product-card" data-name="Apple Watch">
+                    <img src="IMAGES/watch_apple.jpeg" alt="Apple watch" loading="lazy">
+                    <div class="product-info">
+                        <h3>Apple Watch</h3>
+                        <div class="prices"><span class="price">85,000 DA</span></div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit17.html" class="product-card" data-name="Fit Watch">
+                    <img src="IMAGES/watch_fit.jpeg" alt="Fit watch" loading="lazy">
+                    <div class="product-info">
+                        <h3>Fit Watch</h3>
+                        <div class="prices"><span class="price">15,000 DA</span></div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit18.html" class="product-card" data-name="Google Watch">
+                    <img src="IMAGES/watch_google.jpeg" alt="Google watch" loading="lazy">
+                    <div class="product-info">
+                        <h3>Google Watch</h3>
+                        <div class="prices"><span class="price">60,000 DA</span></div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit19.html" class="product-card" data-name="Huawei Watch">
+                    <img src="IMAGES/watch_huawei.jpeg" alt="Huawei watch" loading="lazy">
+                    <div class="product-info">
+                        <h3>Huawei Watch</h3>
+                        <div class="prices"><span class="price">45,000 DA</span></div>
+                    </div>
+                </a>
+
+                <a href="produit/command_produit20.html" class="product-card" data-name="Samsung Watch">
+                    <img src="IMAGES/watch_samsung.jpeg" alt="Samsung watch" loading="lazy">
+                    <div class="product-info">
+                        <h3>Samsung Watch</h3>
+                        <div class="prices"><span class="price">50,000 DA</span></div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="store-footer">
+        <p>© 2025 Mohamed Stour. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

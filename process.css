@@ -1,0 +1,264 @@
+/* process.css */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg:       #080c14;
+    --surface:  #0f1623;
+    --border:   rgba(255,255,255,0.06);
+    --accent:   #4f7dff;
+    --accent2:  #00e5a0;
+    --text:     #e8edf5;
+    --muted:    #5a6580;
+    --price:    #00e5a0;
+    --radius:   14px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* ── Header ── */
+.store-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    height: 64px;
+    background: rgba(8,12,20,0.85);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.store-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    box-shadow: 0 0 12px rgba(79,125,255,0.7);
+    animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%       { transform: scale(1.4); opacity: 0.7; }
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.login-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, var(--accent) 0%, #3a63e8 100%);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: opacity 0.2s, transform 0.15s;
+    box-shadow: 0 4px 14px rgba(79,125,255,0.35);
+}
+
+.login-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.logout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.logout-btn:hover { border-color: rgba(255,107,107,0.4); color: #ff6b6b; }
+
+/* ── Last viewed banner ── */
+#last-viewed-banner {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    padding: 11px 18px;
+    background: rgba(79,125,255,0.08);
+    border: 1px solid rgba(79,125,255,0.18);
+    border-radius: 10px;
+    color: #93b4fd;
+    font-size: 0.87rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ── Main gallery ── */
+.gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+}
+
+/* ── Category sections ── */
+.category { margin-bottom: 52px; }
+
+.category-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-title::after {
+    content: '';
+    flex: 1;
+}
+
+/* ── Product grid ── */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+    gap: 16px;
+}
+
+/* ── Product card ── */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s, border-color 0.22s;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(79,125,255,0.3);
+    border-color: rgba(79,125,255,0.3);
+}
+
+/* Shimmer overlay on hover */
+.product-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(79,125,255,0.04) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.22s;
+    pointer-events: none;
+}
+
+.product-card:hover::after { opacity: 1; }
+
+.product-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    background: #1a2035;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover img { transform: scale(1.04); }
+
+.product-info {
+    padding: 14px 14px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-info h3 {
+    font-size: 0.93rem;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.prices {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--price);
+}
+
+.prices del {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.badge-discount {
+    margin-left: auto;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 20px;
+    background: rgba(0,229,160,0.12);
+    color: var(--accent2);
+    border: 1px solid rgba(0,229,160,0.2);
+}
+
+/* ── Footer ── */
+.store-footer {
+    text-align: center;
+    padding: 24px;
+    color: #2a3045;
+    font-size: 0.82rem;
+    border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .store-header { padding: 0 16px; }
+    .gallery { padding: 20px 12px 50px; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .store-name span.tagline { display: none; }
+}
